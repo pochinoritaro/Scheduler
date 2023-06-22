@@ -1,7 +1,7 @@
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import TemplateView
-from django.shortcuts import render
+from django.shortcuts import redirect
 
 from . import forms
 
@@ -20,4 +20,3 @@ class LoginView(LoginView):
 class LogoutView(LoginRequiredMixin, LogoutView):
     """ログアウトページ"""
     template_name = "accounts/login.html"
-
